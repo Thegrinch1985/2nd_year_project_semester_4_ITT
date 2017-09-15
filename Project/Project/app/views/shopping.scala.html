@@ -1,0 +1,93 @@
+@import models.Category
+@import models.Product
+@import models.users.User
+@(env: play.api.Environment, categories: List[Category],products: List[Product], catId: Long, filter: String, user: User)
+
+
+
+
+@main("Products Page", user)  {
+
+<section>
+  <div class="single-page main-grid-border">
+    <div class="container">
+
+     	<div class="row">
+	  <div class="col-md-3">
+	<div class="list-group">
+			<!-- Start of For loop - For each c in categories add a link -->
+			<a href="@routes.ProductCtrl.shopping(0, filter)" class="list-group-item">All categories</a>
+			@for(c <- categories) {
+		<a href="@routes.ProductCtrl.shopping(c.getId(), filter)" class="list-group-item">@c.getName</a>
+			}
+	</div>
+    
+
+	  </div>
+
+		<div class="col-md-9">
+			@if(flash.containsKey("success")) {
+				  <div class="alert alert-success">
+					  @flash.get("success")
+				  </div>
+			}
+
+			<!-- Search Form -->
+		
+
+			<div id="actions">
+			 <form action="@routes.ProductCtrl.shopping(catId)" method="GET">
+				<input type="search" id="searchbox" name="filter" value="@filter" placeholder="Filter by product name...">
+				<input type="submit" id="searchsubmit" value="Filter by name" class="btn-md btn-primary">
+			 </form>
+			</div>
+			<table class="table table-bordered table-hover table-condensed">
+				<thead>
+				<!-- The header row-->
+				<tr>
+					<th></th>
+					<th>product_Name</th>
+					<th>category</th>
+					<th>manufacturer</th>
+					<th>Price</th>
+					<th>Buy</th>
+				</tr>
+				</thead>
+				<tbody>
+					<!-- Start of For loop - For each p in products add a row -->
+					@for(p <- products) {
+					<tr>
+						<!-- Display each product field value in a column -->
+					   <!-- Display each product field value in a column -->
+                  @if(env.resource("public/images/productImages/thumbnail/" + p.getProduct_id + ".jpg").isDefined) {
+                      <td><img src="/assets/images/productImages/thumbnail/@(p.getProduct_id + ".jpg")"/></td>
+                  } else {
+                      <td><img src="/assets/images/productImages/thumbnail/noImage.png"/></td>
+                  }
+						<td>@p.getProduct_name</td>
+						<td>@p.getCategory</td>
+						<td>@p.getManufacturer</td>
+						<td>&euro; @("%.2f".format(p.getPrice))</td>
+						<td><a href="@routes.ShoppingCtrl.addToBasket(p.getProduct_id )"  class="btn btn-default btn-xs"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+					</tr>
+					} <!-- End of For loop -->
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+    </div>
+  </div>
+
+
+  <script> 
+  function confirmDelete() {
+    return confirm('Are you sure?');
+  }
+  </script>
+</section>
+
+
+
+}

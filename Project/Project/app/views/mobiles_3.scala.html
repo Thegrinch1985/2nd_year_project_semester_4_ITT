@@ -1,0 +1,213 @@
+
+
+@import models.Category
+@import models.Product
+@import models.users.User
+@(user: models.users.User, p: models.Product)
+
+
+
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+<section>
+	<div class="single-page main-grid-border">
+		<div class="container">
+			<div class="container">
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+						
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	
+
+			<div class="product-desc">
+				<div class="col-md-7 product-view">
+					<h2>@p.help(15)</h2>
+				
+					<div class="flexslider">
+
+						<div class="flex-viewport" style="overflow: hidden; position: relative;">
+							<ul class="slides" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-1016px, 0px, 0px);">
+								<li data-thumb="@routes.Assets.versioned("images/s7.jpg ")" class="clone" aria-hidden="true" style="width: 508px; float: left; display: block;">
+									<img src="@routes.Assets.versioned("images/s7.jpg  ")" draggable="false">
+								</li>
+								<li data-thumb="@routes.Assets.versioned("images/s72.jpg ")" class="" style="width: 508px; float: left; display: block;">
+									<img src="@routes.Assets.versioned("images/s72.jpg  ")" draggable="false">
+								</li>
+								<li data-thumb="@routes.Assets.versioned("images/s73.jpg  ")" style="width: 508px; float: left; display: block;" class="flex-active-slide">
+									<img src="@routes.Assets.versioned("images/s73.jpg  ")" draggable="false">
+								</li>
+						
+							</ul>
+						</div>
+					
+						<ul class="flex-direction-nav">
+							<li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
+							<li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
+						</ul>
+					</div>
+					<!-- FlexSlider -->
+					<script defer="" src="@routes.Assets.versioned("javascripts/jquery.flexslider.js")"></script>
+					<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/flexslider.css")" type="text/css" media="screen">
+
+					<script>
+					// Can also be used with $(document).ready()
+					$(window).load(function() {
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						controlNav: "thumbnails"
+					  });
+					});
+					</script>
+					<!-- //FlexSlider -->
+					<div class="product-details">
+						<h4>Category: <a href="#">Mobiles</a></h4>
+						<h4>Views : <strong>150</strong></h4>
+						<p><strong>Display </strong>:@p.help(15)</p>
+						<p><strong>Summary</strong> :
+Samsung has drawn a line between its two flagship handsets for 2016, launching a 5.1-inch Samsung Galaxy S7, partnered with a 5.5-inch Samsung Galaxy S7 edge. The latter, more visually striking model with curved edges, has taken the lion's share of the glory because it's a showboaty smartphone that's piqued interest in the flagship market.
+
+Some may mourn the loss of the more compact 5.1-inch edge model - as was the case with the original S6 edge, which we actually preferred over the massive 5.7-inch SGS6 edge+ - but for many people larger devices are becoming the norm, so this is Samsung finding the balance and giving people what they want.
+
+While the Samsung Galaxy S7 is a fantastic smartphone in its own right, it's the S7 edge that turns heads; this is the smartphone that's calling for attention; this is the handset that's unique. And this is our Samsung Galaxy S7 edge review, with thanks to Carphone Warehouse for the loan of this handset.
+</div>
+				</div>
+				<div class="col-md-5 product-details-grid">
+					<div class="item-price">
+						<div class="product-price">
+							<p class="p-price">Price</p>
+							<h3 class="rate"> &#8364; @p.help_price(15)</h3>
+							<div class="clearfix"></div>
+						</div>
+						<div class="condition">
+							<p class="p-price">Condition</p>
+							<h4>Good</h4>
+							<div class="clearfix"></div>
+						</div>
+						<div class="itemtype">
+							<p class="p-price">Item Type</p>
+							<h4>Mobiles</h4>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+						<div class="interested text-center">
+						<h4>Add this To Your Shopping Cart</h4>
+					
+							
+					<a href="@routes.ShoppingCtrl.addToBasket(15)">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-cart-arrow-down"></i></div>
+						
+						</div>
+					</div>
+				</a>
+	
+		
+						
+					</div>
+						<div class="interested text-center">
+						<h4>Add this To Your WishList</h4>
+					
+							
+					<a href="@routes.ShoppingCtrl.addToWishList(15)">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-cloud"></i></div>
+						
+						</div>
+					</div>
+				</a>
+	
+		
+						
+					</div>
+					<div class="tips">
+							<h4>Review</h4>
+							<form>
+				<p >PLease feel free to Review this Product</p>
+
+<p class="button"><a href="@routes.HomeController.review">Review</a></p>
+			</form>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--footer section start-->
+	<footer class="diff">
+		<p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+	</footer>
+	<!--footer section end-->
+</section>
+
+
+}

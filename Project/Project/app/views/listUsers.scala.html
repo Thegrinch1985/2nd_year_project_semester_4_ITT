@@ -1,0 +1,74 @@
+@(x :List[models.users.User],user: models.users.User)
+
+@main("Products Page", user)  {
+
+<section>
+  <div class="single-page main-grid-border">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="well">
+            <h4>User List</h4>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <!-- The header row-->
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>email</th>
+         
+              </tr>
+            </thead>
+            <tbody>
+
+              @for(u
+              <- x) { <tr>
+
+            
+                <td> @u.getName</td>
+                <td> @u.getRole</td>
+                <td class="numeric">@u.getEmail</td>
+              
+      
+     
+
+                }
+            </tbody>
+          </table>
+           		<div class="col-md-2 focus-grid">
+			<a href="@routes.AdminController.admin_page">
+					<div class="focus-border">
+						
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-arrow-left"></i></div>
+							<h4 class="clrchg">Back</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <script> 
+  function confirmDelete() {
+    return confirm('Are you sure?');
+  }
+  </script>
+</section>
+
+
+
+}

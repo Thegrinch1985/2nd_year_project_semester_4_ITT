@@ -1,0 +1,180 @@
+
+
+@(user: models.users.User)
+
+@main("Products Page", user)  {
+<section>
+    
+  <div class="single-page main-grid-border">
+   
+    <div class="container">
+          	<h2 class="head">Administrator</h2>
+
+					   <div class="well">
+       
+          <h2 class="head">
+    
+                <td>Logged In : </td>
+            
+                <td>	@user.getName()</td>
+            
+            </h2>
+
+    
+            			<div class="container">
+
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.AdminController.listCustomers">
+					<div class="focus-border">
+						
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-user"></i></div>
+							<h4 class="clrchg"> All Customers</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+					<div class="col-md-2 focus-grid">
+					<a href="@routes.AdminController.addProduct">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-plus-square-o"></i></div>
+							<h4 class="clrchg">Add a Product</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.AdminController.listProducts(0)">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-database"></i></div>
+							<h4 class="clrchg">All Products</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.AdminController.listUsers">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-users"></i></div>
+							<h4 class="clrchg">All Users</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-search"></i></div>
+							<h4 class="clrchg">Search</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+							<div class="col-md-2 focus-grid">
+											<a href="@routes.AdminController.order(0)">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-plus"></i></div>
+							<h4 class="clrchg">Order More Stock For Low Stocked Items</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+						<div class="col-md-2 focus-grid">
+								
+        					<div class="focus-border">
+													<a href="@routes.AdminController.sale(0)">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-exclamation-triangle"></i></div>
+							<h4 class="clrchg">Put Low Stock items on Sale</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+							<div class="col-md-2 focus-grid">
+											<a href="@routes.AdminController.all_Sale(0)">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-star-half"></i></div>
+							<h4 class="clrchg">Put all items on 50% Sale</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+					<div class="col-md-2 focus-grid">
+											<a href="@routes.AdminController.revert_from_sale(0)">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-star"></i></div>
+							<h4 class="clrchg">Return items to Original Price</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			
+				<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-weixin"></i></div>
+							<h4 class="clrchg">Website</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-2 focus-grid">
+						<a href="@routes.AdminController.displayRequests()">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-star"></i></div>
+							<h4 class="clrchg">Display Product Requests</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-2 focus-grid">
+						<a href="@routes.AdminController.displayFeedback()">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-star"></i></div>
+							<h4 class="clrchg">Display Feedback</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+		</div>
+      <div class="row">
+        <div class="col-sm-10">
+      
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-bordered table-hover table-condensed">
+
+     
+          </table>
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+}

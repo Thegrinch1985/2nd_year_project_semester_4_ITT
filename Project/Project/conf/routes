@@ -1,0 +1,204 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#  controller showing a home page
+GET     /                           controllers.HomeController.index
+
+GET     /shopping                       controllers.ProductCtrl.shopping(cat:Long ?= 0, filter?="")
+
+#controller showing a login
+GET     /login                                  controllers.security.LoginController.login
+POST    /loginSubmit                            controllers.security.LoginController.loginSubmit
+GET     /logout                                 controllers.security.LoginController.logout
+
+
+#controller showing a SIGN_UP PAGE
+GET     /addCustomer                     controllers.HomeController.addCustomer
+
+GET     /user_page                      controllers.HomeController.user_page
+
+GET     /order_history                  controllers.ShoppingCtrl.orderHistory
+
+
+
+#controller showing a all_products to the user 
+GET     /display_all_products                controllers.ProductCtrl.display_all_products(cat:Long ?= 0, filter?="")
+
+
+#controller showing a list all products
+GET     /listProducts                      controllers.HomeController.listProducts
+
+#controller showing a list all products
+GET     /listUsers                     controllers.HomeController.listUsers
+
+GET     /user                   controllers.ShoppingCtrl.user
+#GET	/updateUser/:id         controllers.HomeController.updateUser(id: Long)
+
+
+#controller showing a categories
+GET     /categories                    controllers.HomeController.categories
+#contoller showing a request_product
+GET     /request_product                controllers.HomeController.requestProduct
+POST    /request_product_submit         controllers.HomeController.requestProductSubmit
+
+#contoller showing a feeedback
+GET     /feedback               controllers.HomeController.feedback
+POST    /feedback_submit        controllers.HomeController.feedbackSubmit
+
+#contoller showing a feeedback
+GET     /review              controllers.HomeController.review
+POST    /reviewSubmit        controllers.HomeController.reviewSubmit
+
+#contoller showing a instrument_1
+GET     /instrument_1              controllers.HomeController.instrument_1 
+#contoller showing a instrument_2
+GET     /instrument_2               controllers.HomeController.instrument_2
+#contoller showing a instrument_3
+GET     /instrument_3               controllers.HomeController.instrument_3
+
+#contoller showing a electronics_1 
+GET     /electronics_1             controllers.HomeController.electronics_1
+
+#contoller showing a electronics_2
+GET     /electronics_2               controllers.HomeController.electronics_2
+
+#contoller showing a electronics_3
+GET     /electronics_3           controllers.HomeController.electronics_3
+#controller showing a book_1
+GET     /book_1                   controllers.HomeController.book_1
+
+#contoller showing a book_2
+GET     /book_2             controllers.HomeController.book_2
+
+#contoller showing a book_3
+GET     /book_3            controllers.HomeController.book_3
+
+
+#controller showing a all_products to the user 
+GET     /display_all_Books               controllers.HomeController.display_all_Books
+
+#controller showing a all_products to the user 
+GET     /display_all_Mobiles              controllers.HomeController.display_all_Mobiles
+
+#controller showing a all_products to the user 
+GET     /display_all_Instruments                controllers.HomeController.display_all_Instruments
+
+#controller showing a all_products to the user 
+GET     /display_all_Electronics               controllers.HomeController.display_all_Electronics
+
+#controller showing a all_products to the user 
+GET     /display_all_Games                controllers.HomeController.display_all_Games
+
+#contoller showing a mobiles_1
+GET     /mobiles_1           controllers.HomeController.mobiles_1
+
+#contoller showing a mobiles_2
+GET     /mobiles_2          controllers.HomeController.mobiles_2
+
+#contoller showing a mobiles_3
+GET     /mobiles_3          controllers.HomeController.mobiles_3
+
+
+#contoller showing a game_1
+GET     /game_1           controllers.HomeController.game_1
+
+#contoller showing a game_2
+GET     /game_2          controllers.HomeController.game_2
+
+#contoller showing a game_3
+GET     /game_3           controllers.HomeController.game_3
+
+
+
+GET    /payment                     controllers.ShoppingCtrl.payment
+
+GET    /creditCard                    controllers.ShoppingCtrl.creditCard
+
+
+POST    /creditCard_submit         controllers.ShoppingCtrl.creditCardSubmit
+
+
+#contoller posting a product submit 
+POST     /addCustomerSubmit                     controllers.HomeController.addCustomerSubmit
+
+
+
+GET      /updateDetails/:id                controllers.HomeController.updateDetails(id:String)
+
+
+
+
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+################
+# Admin Routes #
+################
+
+
+# Request to load the add product form
+GET     /admin/addproduct                  controllers.AdminController.addProduct
+
+# Data submitted by the form
+POST    /admin/addProductSubmit            controllers.AdminController.addProductSubmit
+
+# Delete a product by an id passed as a parameter
+GET    /admin/delProduct/:id               controllers.AdminController.deleteProduct(id: Long)
+
+# Update a product by id
+GET	    /admin/updateProduct/:id        controllers.AdminController.updateProduct(id: Long)
+
+GET     /admin/listProducts             controllers.AdminController.listProducts(cat:Long ?=0L)
+
+
+#controller showing a list all products
+GET     /admin/listUsers                     controllers.AdminController.listUsers
+
+GET     /admin/displayRequests              controllers.AdminController.displayRequests
+
+GET     /admin/displayFeedback             controllers.AdminController.displayFeedback
+
+
+#controller showing a list all products
+GET     /admin/listCustomers                     controllers.AdminController.listCustomers
+
+
+#controller showing a list all products
+GET     /admin/admin_page                     controllers.AdminController.admin_page
+
+GET     /admin/sale            controllers.AdminController.sale(cat:Long ?=0L)
+
+
+GET     /admin/all_Sale            controllers.AdminController.all_Sale(cat:Long ?=0L)
+
+
+GET     /admin/revert_from_sale            controllers.AdminController.revert_from_sale(cat:Long ?=0L)
+
+
+GET     /admin/order           controllers.AdminController.order(cat:Long ?=0L)
+
+
+
+# Shopping
+GET     /showBasket                         controllers.ShoppingCtrl.showBasket()
+GET     /addToBasket/:id                    controllers.ShoppingCtrl.addToBasket(id: Long)
+GET     /addOne/:itemId                     controllers.ShoppingCtrl.addOne(itemId: Long)
+GET     /removeOne/:itemId                  controllers.ShoppingCtrl.removeOne(itemId: Long)
+GET     /emptyBasket                        controllers.ShoppingCtrl.emptyBasket()
+GET     /placeOrder                         controllers.ShoppingCtrl.placeOrder()
+GET     /viewOrder/:id                      controllers.ShoppingCtrl.viewOrder(id: Long)
+
+# WishList
+GET     /showWishList                         controllers.ShoppingCtrl.showWishList()
+GET     /addToWishList/:id                    controllers.ShoppingCtrl.addToWishList(id: Long)
+GET     /addOneWishList/:itemId                     controllers.ShoppingCtrl.addOneWishList(itemId: Long)
+GET     /removeOneWishList/:itemId                  controllers.ShoppingCtrl.removeOneWishList(itemId: Long)
+GET     /emptyWishList                        controllers.ShoppingCtrl.emptyWishList()
+

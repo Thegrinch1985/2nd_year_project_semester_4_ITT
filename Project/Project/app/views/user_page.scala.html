@@ -1,0 +1,83 @@
+@(user: models.users.User)
+@main("Products Page", user)  {
+<section>
+    
+  <div class="single-page main-grid-border">
+   
+    <div class="container">
+          	<h2 class="head">User Page</h2>
+
+
+      <div class="container">
+		<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+                 <a href="@routes.ShoppingCtrl.orderHistory">
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-database"></i></div>
+							<h4 class="clrchg">View Orders</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+      <div class="col-md-2 focus-grid">
+                     <a href="@routes.ShoppingCtrl.user"</a>
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-pencil-square-o"></i></div>
+							<h4 class="clrchg">Edit Details</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			      <div class="col-md-2 focus-grid">
+                     <a href="@routes.ShoppingCtrl.showWishList"</a>
+        					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-cloud"></i></div>
+							<h4 class="clrchg">View WishList</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			
+
+
+
+
+		</div>
+      <div class="row">
+        <div class="col-sm-10">
+      
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-bordered table-hover table-condensed">
+
+     
+          </table>
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+}

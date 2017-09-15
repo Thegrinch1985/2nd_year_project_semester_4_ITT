@@ -1,0 +1,279 @@
+
+@import models.Category
+@import models.Product
+@(user: models.users.User, p: models.Product)
+
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+	 <section>
+
+         <div class="total-ads main-grid-border">
+		<div class="container">
+			<div class="container">
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+			<div class="select-box">
+
+				<h2 class="head">Display All Books</h2>
+				<div class="clearfix"></div>
+			</div>
+
+
+			<div class="ads-grid">
+				<div class="side-bar col-md-3">
+					<p>Is there a product that you wish to purchase but we do not stock? Then please go to the
+						<a href="@routes.HomeController.requestProduct"> request a product</a> page and leave us your details.</p>
+
+
+
+					<div class="featured-ads">
+
+					<h2 class="sear-head fer">Featured Ads</h2>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.book_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/papillon1.jpg ")"title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(4)  by Henri Charriere </h4>
+								<p> &#8364; @p.help_price(4) </p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.game_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/resboevil.png")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(7) </h4>
+								<p> &#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.mobiles_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/s7.jpg ")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(15)</h4>
+								<p>&#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				</div>
+				<div class="ads-display col-md-9">
+					<div class="wrapper">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+						   <div>
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
+									<label>view :</label>
+									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+								</div>
+
+								<div class="clearfix"></div>
+							<ul class="list">
+								<a href="@routes.HomeController.book_1">
+									<li>
+									<img src="@routes.Assets.versioned("images/papillon1.jpg ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title"> @p.help(4)</h5>
+									<span class="adprice">&#8364; @p.help_price(4)</span>
+									<p class="catpath">Books</p>
+									<p>
+										 Henri Charrière, called "Papillon," for the butterfly tattoo on his chest,
+						 was convicted in Paris in 1931 of a murder he did not commit. Sentenced to life imprisonment in the penal colony of French Guiana,
+						 he became obsessed with one goal: escape. After planning and executing a series of treacherous yet failed attempts over many years,
+						  he was eventually sent to the notorious prison, Devil's Island, a place from which no one had ever escaped . . . until Papillon.
+						  His flight to freedom remains one of the most incredible feats of human cunning, will, and endurance ever undertaken.
+
+Charrière's astonishing autobiography, Papillon, was published in France to instant acclaim in 1968, more than twenty years after his final escape. Since then, it has become a treasured classic -- the gripping, shocking,
+ ultimately uplifting odyssey of an innocent man who would not be defeated.
+									</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.book_2">
+									<li>
+									<img src="@routes.Assets.versioned("images/Long_Walk_to_FreedomA.jpg ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(5)</h5>
+									<span class="adprice">&#8364; @p.help_price(5)</span>
+									<p class="catpath">Books</p>
+									<p>
+										 Nelson Mandela is one of the great moral and political leaders of our time: an international hero whose lifelong dedication to the fight against racial oppression in South Africa won him the Nobel Peace Prize and the presidency of his country. Since his triumphant release in 1990 from more than a quarter-century of imprisonment, Mandela has been at the center of the most compelling and inspiring political drama in the world. As president of the African National Congress and head of South Africa's antiapartheid movement, he was instrumental in moving the nation toward multiracial government and majority rule. He is revered everywhere as a vital force in the fight for human rights and racial equality.
+
+LONG WALK TO FREEDOM is his moving and exhilarating autobiography, destined to take its place among the finest memoirs of history's greatest figures. Here for the first time, Nelson Rolihlahla Mandela tells the extraordinary story of his life--an epic of struggle, setback, renewed hope, and ultimate triumph.
+									</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.book_3">
+									<li>
+									<img src="@routes.Assets.versioned("images/gabriel-garcia-marquez-one-hundred-years-of-solitude-a.jpg ")"  title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(6)</h5>
+									<span class="adprice">&#8364; @p.help_price(6)</span>
+									<p class="catpath">Books </p>
+									<p>
+										One of the 20th century's enduring works, One Hundred Years of Solitude is a widely beloved and acclaimed novel known throughout the world, and the ultimate achievement of a Nobel Prize winning career.
+
+The novel tells the story of the rise and fall of the mythical town of Macondo through the history of the family. It is a rich and brilliant chronicle of life and death, and the tragicomedy of humankind. In the noble, ridiculous, beautiful, and tawdry story of the family, one sees all of humanity, just as in the history, myths, growth, and decay of Macondo, one sees all of Latin America.
+
+Love and lust, war and revolution, riches and poverty, youth and senility -- the variety of life, the endlessness of death, the search for peace and truth -- these universal themes dominate the novel. Whether he is describing an affair of passion or the voracity of capitalism and the corruption of government, Gabriel Garcia Marquez always writes with the simplicity, ease, and purity that are the mark of a master.
+
+Alternately reverential and comical, One Hundred Years of Solitude weaves the political, personal, and spiritual to bring a new consciousness to storytelling. Translated into dozens of languages, this stunning work is no less than an accounting of the history of the human rac
+									</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+
+
+
+								<div class="clearfix"></div>
+								</a>
+							</ul>
+						</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
+
+				</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+			<div class="feed-back-form">
+			<form>
+				<p >Is there any Product You wish for us to get In stock ? To go to the
+				Request a product page click on the Request button !!!!!</p>
+
+<p class="button"><a href="@routes.HomeController.requestProduct">Request Product</a></p>
+			</form>
+				</div>
+
+	</div>
+	<script type="text/javascript">
+$(document).ready(function () {
+var elem=$('#container ul');
+	$('#viewcontrols a').on('click',function(e) {
+		if ($(this).hasClass('gridview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('list').addClass('grid');
+				$('#viewcontrols').removeClass('view-controls-list').addClass('view-controls-grid');
+				$('#viewcontrols .gridview').addClass('active');
+				$('#viewcontrols .listview').removeClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+		else if($(this).hasClass('listview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('grid').addClass('list');
+				$('#viewcontrols').removeClass('view-controls-grid').addClass('view-controls-list');
+				$('#viewcontrols .gridview').removeClass('active');
+				$('#viewcontrols .listview').addClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+	});
+});
+</script>
+
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+			</footer>
+        <!--footer section end-->
+		</section>
+
+
+}

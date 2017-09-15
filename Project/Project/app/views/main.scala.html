@@ -1,0 +1,89 @@
+ @(title: String, user: models.users.User)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+	<title>Resale a Business Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+	<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css ")">
+	<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrap-select.css ")">
+	<link href="@routes.Assets.versioned("stylesheets/style.css ")" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/flexslider.css ")" type="text/css" media="screen" />
+	<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/font-awesome.min.css ")" />
+	<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/easy-responsive-tabs.css " )"/>
+		<link rel="stylesheet" href="@routes.Assets.versioned("stylesheetsjquery.uls.css ")"/>
+		<link  rel="stylesheet" href="@routes.Assets.versioned("stylesheets/jquery.uls.grid.css ")" />
+<link  rel="stylesheet" href="@routes.Assets.versioned("stylesheets/jquery.uls.lcd.css ")" />
+
+
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<!--fonts-->
+	<link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+		rel='stylesheet' type='text/css'>
+	<!--//fonts-->
+	<!-- js -->
+	<script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery.min.js ")"></script>
+	<!-- js -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="@routes.Assets.versioned("javascripts/tabs.js ")"></script>
+	<script src="@routes.Assets.versioned("javascripts/bootstrap.min.js ")"></script>
+	<script src="@routes.Assets.versioned("javascripts/bootstrap-select.js ")"></script>
+	<script src="@routes.Assets.versioned("javascripts/script.js ")"></script>
+	<script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery.leanModal.min.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery.min.js ")"></script>
+		  	<script src="@routes.Assets.versioned("javascripts/easyResponsiveTabs.js")"></script>
+
+
+
+
+
+</head>
+
+
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="@routes.HomeController.index"><span>View</span>&Buy</a>
+			</div>
+			<div class="header-right">
+				<div class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Account<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+
+			<li@if(title == "Login"){
+							class = active}>
+							@if(user != null){
+                @if(user.getRole() == "customer"){
+							<li><a href="@routes.HomeController.user_page">View Account</a></li>
+            } else {
+              <li><a href="@routes.AdminController.admin_page">View Account</a></li>
+            }
+							<li><a href="@security.routes.LoginController.logout">Logout @user.getName()</a></li>
+							} else {
+							<li><a href="@security.routes.LoginController.login">Login</a></li>
+							<li><a href="@routes.HomeController.addCustomer">SignUp</a></li>
+							}
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<body>
+		@* And here's where we render the `Html` object containing * the page content. *@ @content
+	</body>
+
+</html>

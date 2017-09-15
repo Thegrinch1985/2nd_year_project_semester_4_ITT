@@ -1,0 +1,89 @@
+@(products :List[models.Product],user: models.users.User)
+
+
+
+
+
+@main("Products Page", user)  {
+
+<section>
+  <div class="single-page main-grid-border">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="well">
+            <h4>Sale Items</h4>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <!-- The header row-->
+              <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                
+                <th>Manufacturer</th>
+                <th>Quantity</th>
+                   <th>Price</th>
+                <th> Sale Price </th>
+             
+              </tr>
+            </thead>
+   
+            <tbody>
+                       @for(p
+              <- products) { <tr>
+
+                <td class="numeric">@p.getProduct_id</td>
+                <td> @p.getProduct_name</td>
+                <td> @p.getCategory</td>
+                
+                <td> @p.getManufacturer</td>
+                <td class="numeric">@p.getQuantity</td>
+                <td class="numeric">&euro; @("%.2f".format(p.getPrice))</td>
+                 @p.sale(p.getProduct_id,p.getQuantity)
+                  <td class="numeric">&euro; @("%.2f".format(p.getPrice))</td>
+                <td>
+                </tr>
+
+                }
+
+
+
+            </tbody>
+          </table>
+ 		<div class="col-md-2 focus-grid">
+			<a href="@routes.AdminController.admin_page">
+					<div class="focus-border">
+						
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-arrow-left"></i></div>
+							<h4 class="clrchg">Back</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <script> 
+  function confirmDelete() {
+    return confirm('Are you sure?');
+  }
+  </script>
+</section>
+
+
+
+}

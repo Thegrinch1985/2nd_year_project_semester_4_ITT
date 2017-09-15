@@ -1,0 +1,56 @@
+@(shopOrder :List[models.shopping.ShopOrder], customer: models.users.Customer)
+
+@import play.api.Play.resource
+@import play.api.Play.current
+@import models.shopping._
+@import models.Product
+
+@main("Order History", customer) {
+
+<section>
+  <div class="single-page main-grid-border">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="well">
+            <h4>Order History </h4>
+         
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <!-- The header row-->
+              <tr>
+                <th>Order ID</th>
+                <th>Ordered Date</th>
+                <th>Ordered Total</th>
+                
+             
+              </tr>
+            </thead>
+   
+            <tbody>
+
+              @for(s <- customer.getOrders()){
+          
+              <td>@s.getId()</td>
+              <td>@s.getOrderDate()</td>
+              <td>@s.getOrderTotal()</td>
+              
+              }
+
+
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+}

@@ -1,0 +1,65 @@
+ @* addProductForm defined above is the parameter passed to this view by the controller *@
+
+ @import helper._
+
+ @(addProductForm: Form[models.Product], user: models.users.User,env: play.api.Environment))
+
+<!-- Pass page title and user on to main -->
+
+@main("Add Products Page", user) {
+<section>
+  <div class="single-page main-grid-border">
+    <div class="container">
+      <div class="col-sm-4">
+
+        <h3>Add a new Product</h3>
+          @form(action = routes.AdminController.addProductSubmit(), 'class -> "form-horizontal", 'role->"form", 'enctype -> "multipart/form-data"){
+
+          <!--@inputText(addProductForm("productID"), '_label -> "Product ID",'class -> "form-control")-->
+          @inputText(addProductForm("product_name"), '_label -> "Product Name",'class -> "form-control")
+          @select(
+			                  addProductForm("category"),
+			                  options(Category.options),
+			                  '_label -> "Category", '_default -> "-- Choose a category --",
+			                  '_showConstraints -> false, 'class -> "form-control"
+		      )
+          @inputText(addProductForm("product_price"), '_label -> "Product Price",'class -> "form-control")
+          @inputText(addProductForm("manufacturer"), '_label -> "Manufacturer",'class -> "form-control")
+          @inputText(addProductForm("quantity"), '_label -> "Quantity",'class -> "form-control")
+
+
+          @inputText(addProductForm("productID"), '_label -> "", 'hidden -> "hidden")
+
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="actions">
+
+            <label>Image Upload</label>
+            <input class="btn-sm btn-default" type="file" name="upload">
+            <br><br>
+                	<div class="row">
+				@if(env.resource("public/images/thumbnails/" + addProductForm("id").value() + ".jpg").isDefined) {
+					<p><img src="/assets/images/thumbnails/@(addProductForm("id").value() + ".jpg")"/></p>
+				} else {
+				<!--<p><img src="/assets/images/thumbnails/noImage.png"/></p>-->
+				}
+			</div>
+            <input type="submit" value="Add Product" class="btn btn-primary">
+            <a href="@routes.HomeController.index()"
+              <button class="btn btn-warning">Cancel</button>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <script>
+  function confirmDel() {
+    return confirm('Are you sure?');
+  }
+  </script>
+  }
+</section>
+  }

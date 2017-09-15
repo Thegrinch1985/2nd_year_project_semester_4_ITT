@@ -1,0 +1,103 @@
+@(customer: models.users.Customer)
+
+@import play.api.Play.resource
+@import play.api.Play.current
+@import models.shopping._
+@import models.Product
+
+@main("Home", customer) {
+
+
+
+
+<section>
+	<div class="single-page main-grid-border">
+		<div class="container">
+				<h2 class="head">WishList</h2>
+
+
+
+<div class="row">
+
+	<div class="col-md-12">
+		@if(flash.containsKey("success")) {
+			  <div class="alert alert-success">
+			      @flash.get("success")
+			  </div>
+		} 
+        
+
+		<table class="table table-bordered table-hover table-condensed">
+			<thead>
+			<!-- The header row-->
+			<tr>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Item Price</th>
+			
+			
+                <th>Manufacturer</th>
+             <th>Add To Basket</th>
+			</tr>
+			</thead>
+			<tbody>
+                @if(customer.getWishList() != null) {
+                    <!-- Start of For loop - For each p in products add a row -->
+                    @for(i <- customer.getWishList().getWishListItems()) {
+                    <tr>
+                    
+                        <td>@i.getProduct.getProduct_name()</td>
+                        <td>@i.getProduct.getCategory()</td>
+                                 <td>&euro; @("%.2f".format(i.getPrice))</td>
+                          <td>@i.getProduct.getManufacturer()</td>
+               						<td><a href="@routes.ShoppingCtrl.addToBasket(i.getProduct.getProduct_id())" 
+                                                 
+<div class="focus-image"><i class="fa fa-cart-arrow-down"></i></div>
+                                       </a></td>
+
+
+              
+
+                
+                       
+                    </tr>
+                    }<!-- End of For loop -->
+              }
+			</tbody>
+		</table>
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-right">
+                    <a href="@routes.ShoppingCtrl.emptyWishList()" class="btn btn-danger btn-sm" onclick="return confirmDel();">
+                    <span class="glyphicon glyphicon-trash"></span> Empty WishLIst</a>
+                </p>
+            </div>  
+       
+        </div>
+    </div>
+</div>
+		</div>
+	</div>
+
+<script>
+	// JavaScript function returns true if user clicks yes, otherwise, false
+	function confirmDel() {
+		return confirm('Are you sure?');
+	}
+</script>
+}
+
+
+	<!--footer section start-->
+	<footer class="diff">
+		<p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+	</footer>
+	<!--footer section end-->
+</section>
+
+

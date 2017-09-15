@@ -1,0 +1,151 @@
+
+ @(user: models.users.User)
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+	 <section>
+         	<div class="categories-section main-grid-border">
+		<div class="container">
+			<h2 class="head">Main Categories</h2>
+			<div class="category-list">
+				<div id="parentVerticalTab" class="resp-vtabs hor_1" style="display: block; width: 100%; margin: 0px;">
+					<ul class="resp-tabs-list hor_1" style="margin-top: 3px;">
+						<li class="resp-tab-item hor_1 resp-tab-active" aria-controls="hor_1_tab_item-0" role="tab" style="background-color: white; border-color: rgb(193, 193, 193);">Mobiles</li>
+						<li class="resp-tab-item hor_1" aria-controls="hor_1_tab_item-1" role="tab" style="background-color: rgb(245, 245, 245);">Electronics</li>
+						<li class="resp-tab-item hor_1" aria-controls="hor_1_tab_item-2" role="tab" style="background-color: rgb(245, 245, 245);">Books</li>
+						<li class="resp-tab-item hor_1" aria-controls="hor_1_tab_item-3" role="tab" style="background-color: rgb(245, 245, 245);">Instruments</li>
+						<li class="resp-tab-item hor_1" aria-controls="hor_1_tab_item-4" role="tab" style="background-color: rgb(245, 245, 245);">Games</li>
+
+
+						<a href="all-classifieds.html">All Ads</a>
+					</ul>
+					<div class="resp-tabs-container hor_1">
+
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="@routes.Assets.versioned("images/categories/mobiles.jpg ")" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Mobiles</h4>
+									<span>5,12,850 Ads</span>
+									<a href="@routes.HomeController.display_all_Mobiles">View all Mobiles</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="@routes.Assets.versioned("images/categories/electronics.jpg ")"  title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Electronics</h4>
+									<span>2,01,850 Ads</span>
+									<a href="@routes.HomeController.display_all_Electronics">View all Electronics</a>
+										<div class="sub-categories">
+								<ul>
+									<li><a href="@routes.HomeController.electronics_1">Laptops</a></li>
+									<li><a href="@routes.HomeController.electronics_2">Routers</a></li>
+						
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="@routes.Assets.versioned("images/categories/books.jpg ")"  title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Books</h4>
+									<span>1,98,080 Ads</span>
+									<a href="@routes.HomeController.display_all_Books">View all Books</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="@routes.Assets.versioned("images/categories/instruments.jpg ")" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Instruments</h4>
+									<span>6,17,568 Ads</span>
+									<a href="@routes.HomeController.display_all_Instruments">Instruments</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="@routes.Assets.versioned("images/categories/games.jpg ")"  title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Games and Consoles</h4>
+									<span>1,05,168 Ads</span>
+									<a href="@routes.HomeController.display_all_Games">View all Games </a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						
+						</div>
+					
+						
+						
+					
+				
+					
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!--Plug-in Initialisation-->
+		<script type="text/javascript">
+		
+    $(document).ready(function() {
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+			</footer>
+        <!--footer section end-->
+		</section>
+
+
+}

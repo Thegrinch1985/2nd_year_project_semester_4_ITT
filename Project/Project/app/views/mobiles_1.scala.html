@@ -1,0 +1,221 @@
+@import models.Category
+@import models.Product
+@import models.users.User
+
+
+@(user: models.users.User, p: models.Product)
+
+
+
+
+
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+<section>
+	<div class="single-page main-grid-border">
+		<div class="container">
+		<div class="container">
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+						
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	
+			<div class="product-desc">
+				<div class="col-md-7 product-view">
+					<h2>@p.help(13)</h2>
+				
+					<div class="flexslider">
+
+						<div class="flex-viewport" style="overflow: hidden; position: relative;">
+							<ul class="slides" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-1016px, 0px, 0px);">
+								<li data-thumb="@routes.Assets.versioned("images/1p1.jpg ")" class="clone" aria-hidden="true" style="width: 508px; float: left; display: block;">
+									<img src="@routes.Assets.versioned("images/1p1.jpg  ")" draggable="false">
+								</li>
+								<li data-thumb="@routes.Assets.versioned("images/1p2.jpg ")" class="" style="width: 508px; float: left; display: block;">
+									<img src="@routes.Assets.versioned("images/1p2.jpg  ")" draggable="false">
+								</li>
+								<li data-thumb="@routes.Assets.versioned("images/1p3.jpg  ")" style="width: 508px; float: left; display: block;" class="flex-active-slide">
+									<img src="@routes.Assets.versioned("images/1p3.jpg  ")"draggable="false">
+								</li>
+						
+							</ul>
+						</div>
+					
+						<ul class="flex-direction-nav">
+							<li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
+							<li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
+						</ul>
+					</div>
+					<!-- FlexSlider -->
+					<script defer="" src="@routes.Assets.versioned("javascripts/jquery.flexslider.js")"></script>
+					<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/flexslider.css")" type="text/css" media="screen">
+
+					<script>
+					// Can also be used with $(document).ready()
+					$(window).load(function() {
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						controlNav: "thumbnails"
+					  });
+					});
+					</script>
+					<!-- //FlexSlider -->
+					<div class="product-details">
+						<h4>Category: <a href="#">Mobiles</a></h4>
+						<h4>Views : <strong>150</strong></h4>
+						<p><strong>Display </strong>:@p.help(13)</p>
+						<p><strong>Summary</strong> :
+
+
+After two previous iterations that were decent but not quite good enough, OnePlus has hit the bigtime with its third iteration. The OnePlus 3 is pretty amazing – a jaw-dropping phone in almost every way that takes the game to the Samsung Galaxy S7, HTC 10 and even the iPhone 6S.
+
+Previous OnePlus devices offered a slightly compromised experience that, while commendable, wasn't good enough to convince us they were genuine flagship beaters. As you'll see from this review, this is no longer the case.
+
+Since my initial review, the OnePlus 3 has risen in price by £20, from £309 up to £329, apparently thanks to Britain voting to leave the EU. Still, even at this price, it does make you think twice before buying an iPhone 7 outright. It's also had a couple of updates, including a new gold model and the ability to set the screen to a slightly more subdued sRGB colour mode. It's not a huge deal, but it gives buyers more choice on how their phone looks, both front and back.
+
+Previous OnePlus devices compromised, but the OnePlus 3 doesn’t. It has a lovely design, fast-charging, NFC for mobile payments and you don’t need a silly invite to actually buy one.
+
+If you want an Android phone off-contract, this might just be the perfect choice.
+
+</div>
+				</div>
+				<div class="col-md-5 product-details-grid">
+					<div class="item-price">
+						<div class="product-price">
+							<p class="p-price">Price</p>
+							<h3 class="rate"> &#8364; @p.help_price(13)</h3>
+							<div class="clearfix"></div>
+						</div>
+						<div class="condition">
+							<p class="p-price">Condition</p>
+							<h4>Good</h4>
+							<div class="clearfix"></div>
+						</div>
+						<div class="itemtype">
+							<p class="p-price">Item Type</p>
+							<h4>Mobiles</h4>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+						<div class="interested text-center">
+						<h4>Add this To Your Shopping Cart</h4>
+					
+							
+					<a href="@routes.ShoppingCtrl.addToBasket(13)">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-cart-arrow-down"></i></div>
+						
+						</div>
+					</div>
+				</a>
+	
+		
+						
+					</div>
+						<div class="interested text-center">
+						<h4>Add this To Your WishList</h4>
+					
+							
+					<a href="@routes.ShoppingCtrl.addToWishList(13)">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-cloud"></i></div>
+						
+						</div>
+					</div>
+				</a>
+	
+		
+						
+					</div>
+					<div class="tips">
+							<h4>Review</h4>
+							<form>
+				<p >PLease feel free to Review this Product</p>
+
+<p class="button"><a href="@routes.HomeController.review">Review</a></p>
+			</form>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--footer section start-->
+	<footer class="diff">
+		<p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+	</footer>
+	<!--footer section end-->
+</section>
+
+
+}

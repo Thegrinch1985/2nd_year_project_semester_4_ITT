@@ -1,0 +1,246 @@
+
+
+@import models.Category
+@import models.Product
+@(user: models.users.User, p: models.Product)
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<div class="main-banner banner text-center">
+	<div class="container">
+		<h1>The best products <span class="h1color">at the best prices</span></h1>
+
+	</div>
+</div>
+<!-- content-starts-here -->
+<div class="content">
+	<div class="categories">
+		<div class="container">
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.ShoppingCtrl.showBasket">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-shopping-cart"></i></div>
+							<h4 class="clrchg">Shopping Basket</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="trending-ads">
+			<div class="container">
+				<!-- slider -->
+				<div class="trend-ads">
+					<h2>Most popular</h2>
+					<ul id="flexiselDemo3">
+						<li>
+							<div class="col-md-4 biseller-column">
+
+						<a href="@routes.HomeController.book_1">
+
+								<img src="@routes.Assets.versioned("images/papillon1.jpg ")"title="ad image" alt="" />
+							<span class="price"> &#8364; @p.help_price(4)</span>
+							<div class="featured-ad-right">
+								<h4>@p.help(4)  by Henri Charriere </h4>
+
+							</div>
+							<div class="clearfix"></div>
+						</a>
+
+							</div>
+							<div class="col-md-4 biseller-column">
+							<a href="@routes.HomeController.game_1">
+
+								<img src="@routes.Assets.versioned("images/resboevil.png ")"title="ad image" alt="" />
+							<span class="price"> &#8364; @p.help_price(7)</span>
+							<div class="featured-ad-right">
+								<h4>@p.help(7)  </h4>
+
+							</div>
+							<div class="clearfix"></div>
+						</a>
+							</div>
+							<div class="col-md-4 biseller-column">
+
+							<a href="@routes.HomeController.electronics_1">
+								<img src="@routes.Assets.versioned("images/lenovo1.jpg  ")"title="ad image" alt=""/>
+							</a>
+							<span class="price"> &#8364; @p.help_price(1)</span>
+							<div class="featured-ad-right">
+								<h4>@p.help(1)  </h4>
+
+							</div>
+							</div>
+
+						</li>
+					</ul>
+					<script type="text/javascript">
+						 $(window).load(function() {
+							$("#flexiselDemo3").flexisel({
+								visibleItems:1,
+								animationSpeed: 1000,
+								autoPlay: true,
+								autoPlaySpeed: 5000,
+								pauseOnHover: true,
+								enableResponsiveBreakpoints: true,
+								responsiveBreakpoints: {
+									portrait: {
+										changePoint:480,
+										visibleItems:1
+									},
+									landscape: {
+										changePoint:640,
+										visibleItems:1
+									},
+									tablet: {
+										changePoint:768,
+										visibleItems:1
+									}
+								}
+							});
+
+						});
+					   </script>
+					<script type="text/javascript" src="routes.Assets.versioned("javascripts/jquery.flexisel.js")"></script>
+				</div>
+			</div>
+			<!-- //slider -->
+		</div>
+		<div class="mobile-app">
+			<div class="container">
+				<div class="col-md-12 app-right">
+					<h3>View&Buy is the <span>easiest</span> way for selling and buying second hand goods</h3>
+					<p>We sell all kinds of products if you wish to sell an item please dont hesitate to contact us.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--footer section start-->
+	<footer>
+		<div class="footer-top">
+			<div class="container">
+				<div class="foo-grids">
+					<div class="col-md-3 footer-grid">
+						<h4 class="footer-head">Who We Are</h4>
+						<p>We are three students from the Insitute of Technology Tallaght, Phil O'Donovan from Tallaght,
+							Shane McCann from Walkinstown and Howie Lynch from Greystones. Together we got together to create this
+							website using the Java Play Framework for our 2nd Year Project.
+						</p>
+
+					</div>
+					<div class="col-md-4 footer-grid">
+						<h4 class="footer-head">Help</h4>
+						<ul>
+							<li><a href="@routes.HomeController.index">Home</a></li>
+							<li><a href="@security.routes.LoginController.login">Login</a></li>
+
+							<li><a href="@routes.HomeController.feedback">Feedback</a></li>
+							<li><a href="@routes.HomeController.requestProduct">Request a Product</a></li>
+
+						</ul>
+					</div>
+
+					<div class="col-md-4 footer-grid">
+						<h4 class="footer-head">Contact Us</h4>
+						<span class="hq">Our Headquarters</span>
+						<address>
+							<ul class="location">
+								<li><span class="glyphicon glyphicon-map-marker"></span></li>
+								<li>Institute of Technology Tallaght</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul class="location">
+								<li><span class="glyphicon glyphicon-earphone"></span></li>
+								<li>0862185233</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul class="location">
+								<li><span class="glyphicon glyphicon-envelope"></span></li>
+								<li><a href="mailto:info(AT)example.com">view&buy&#64gmail.com</a></li>
+								<div class="clearfix"></div>
+							</ul>
+						</address>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom text-center">
+			<div class="container">
+				<div class="footer-logo">
+					<a href="index.html"><span>View&</span>Buy</a>
+				</div>
+				<div class="footer-social-icons">
+					<ul>
+						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
+						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
+						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+					</ul>
+				</div>
+				<div class="copyrights">
+					<p> © 2017 View&Buy. All Rights Reserved | Design by </p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</footer>
+	<!--footer section end-->
+
+	}

@@ -1,0 +1,286 @@
+
+
+@import models.Category
+@import models.Product
+@(user: models.users.User, p: models.Product)
+
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+	 <section>
+
+         <div class="total-ads main-grid-border">
+		<div class="container">
+			<h2 class="head">Electronics</h2>
+			<div class="container">
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+			<div class="select-box">
+
+				<h2 class="head">Display All Electronics</h2>
+				<div class="clearfix"></div>
+			</div>
+
+
+			<div class="ads-grid">
+				<div class="side-bar col-md-3">
+					<p>Is there a product that you wish to purchase but we do not stock? Then please go to the
+						<a href="@routes.HomeController.requestProduct"> request a product</a> page and leave us your details.</p>
+
+
+				<div class="featured-ads">
+
+					<h2 class="sear-head fer">Featured Ads</h2>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.book_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/papillon1.jpg ")"title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(4)  by Henri Charriere </h4>
+								<p> &#8364; @p.help_price(4) </p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.game_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/resboevil.png")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(7) </h4>
+								<p> &#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.mobiles_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/s7.jpg ")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(15)</h4>
+								<p>&#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+
+				</div>
+				<div class="ads-display col-md-9">
+					<div class="wrapper">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+						   <div>
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
+									<label>view :</label>
+									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+								</div>
+								<div class="sort">
+
+									 </div>
+								<div class="clearfix"></div>
+							<ul class="list">
+								<a href="@routes.HomeController.electronics_1">
+									<li>
+									<img src="@routes.Assets.versioned("images/lenovo1.jpg ")"  title="" alt="" />
+									<section class="list-left">
+									<h5 class="title"> @p.help(1)</h5>
+									<span class="adprice">&#8364;  @p.help_price(1)</span>
+									<p class="catpath">Electronics</p>
+									<p>
+										 Yes, that's five stars. We'll put it plainly: The latest Lenovo ThinkPad T460 is the best mainstream business laptop on the market. Full stop.
+
+Of course, that isn’t as earth-shattering a statement as it might seem on its face, since it’s building off a long line of ThinkPad “bests” dating back to the turn of the century. (Okay, and granted: The century turned only 17 years ago. But still, an impressive run.)
+
+Lenovo ThinkPad T460 (Front and Left)
+The new version of the T series introduces Intel’s 6th-Generation ("Skylake") Core-i processors for greater speed and re-introduces Lenovo’s slick Power Bridge dual-battery technology for tremendous battery life. Alas, we bid adieu to the venerable VGA port, but other than that, everything you need is here.
+
+And surprisingly for a ThinkPad, the price is very reasonable—even configured the way you want it. The base SKU, with a Core i3 CPU, 4GB of RAM, and a non-touch lower-res screen, starts at around $810. Configure it with a Core i5, 8GB of RAM, a 1080p touchscreen, and other goodies to match our test unit, and you’re still south of $1,200. And that isn’t bad at all for a laptop likely to last you five years or more.
+
+
+										 </p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.electronics_2">
+									<li>
+									<img src="@routes.Assets.versioned("images/mac3.jpg ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title"> @p.help(2)</h5>
+									<span class="adprice">&#8364; @p.help_price(2)</span>
+									<p class="catpath">Electronics</p>
+									<p>
+										No, it's not just a CPU refresh. Apple started selling a new line of iMacs today, and yes, while they have fresh processors and graphics cards inside, that's really the least of it. Going forward, all the 27-inch models have a 5K screen -- not just the flagship we reviewed last year -- while the 21.5-inch version now has an optional 4K panel. Across the board, too, these new 4K and 5K displays have a wider color gamut, although the difference is fairly subtle. Possibly more important than the iMac itself, though, are the input devices: Apple redesigned the wireless keyboard, mouse and trackpad, adding rechargeable batteries and, in the case of the touchpad, pressure-sensitive Force Touch gestures.
+
+I've been spending a few days with the new iMac, and chose to review the 4K 21.5-inch edition in particular since this is the first "small" iMac with a Retina display. Between the crisper screen, compact footprint and a lower price than the 27-inch models, it has the potential to hit the sweet spot for a lot of people. Just be sure to upgrade the hard drive before you place your order.The iMac is still the all-in-one to beat, with an optional 4K display on the 21.5-inch versionand improved color accuracy. Creative pros will gravitate toward the 5K27-inch model, which offers better specs, while casual users will appreciate that the 21.5-incher combinesa Retina display witha space-saving design. That said, we would have liked a discrete graphics option on the 21.5-inch version, along with some more generous storage options on the pricier configurations.
+	</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.electronics_3">
+									<li>
+									<img src="@routes.Assets.versioned("images/r3.jpg ")"  title="" alt="" />
+									<section class="list-left">
+									<h5 class="title"> @p.help(3)</h5>
+									<span class="adprice">&#8364; @p.help_price(3)</span>
+									<p class="catpath">Electronics</p>
+									<p>
+
+										Fastest gaming performance. Unmatched processing power. Superior WiFi technology. Nighthawk® X4S AC2600 Smart WiFi Router with 160MHz, MU-MIMO and Quad Stream technology delivers WiFi to multiple devices simultaneously for faster speeds. Whether gaming or streaming, you're getting 160MHz bandwidth that ensures low-ping and best stream quality. Enjoy ultimate WiFi speeds up to 2.53Gbps, a powerful 1.7GHz dual core processor, and Dynamic QoS, delivering smoother streaming and gaming by prioritizing applications and devices. Features such as NETGEAR genie® remote access, ReadyCLOUD® , OpenVPN, and Kwilt app support help you manage your network, have access to a secure personal cloud, access home network remotely, and share photos stored on the storage from anywhere</p>
+
+
+
+										</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+
+
+
+								<div class="clearfix"></div>
+								</a>
+							</ul>
+						</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
+
+				</div>
+
+
+				</div>
+					<div class="feed-back-form">
+			<form>
+				<p >Is there any Product You wish for us to get In stock ? To go to the
+				Request a product page click on the REquest button !!!!!</p>
+
+					<p class="button"><a href="@routes.HomeController.requestProduct">Request Product</a></p>
+
+			</form>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+$(document).ready(function () {
+var elem=$('#container ul');
+	$('#viewcontrols a').on('click',function(e) {
+		if ($(this).hasClass('gridview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('list').addClass('grid');
+				$('#viewcontrols').removeClass('view-controls-list').addClass('view-controls-grid');
+				$('#viewcontrols .gridview').addClass('active');
+				$('#viewcontrols .listview').removeClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+		else if($(this).hasClass('listview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('grid').addClass('list');
+				$('#viewcontrols').removeClass('view-controls-grid').addClass('view-controls-list');
+				$('#viewcontrols .gridview').removeClass('active');
+				$('#viewcontrols .listview').addClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+	});
+});
+</script>
+
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+			</footer>
+        <!--footer section end-->
+		</section>
+
+
+}

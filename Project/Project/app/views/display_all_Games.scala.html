@@ -1,0 +1,269 @@
+
+
+@import models.Category
+@import models.Product
+@(user: models.users.User, p: models.Product)
+
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+	 <section>
+
+         <div class="total-ads main-grid-border">
+		<div class="container">
+			<h2 class="head">Games</h2>
+			<div class="container">
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+			<div class="select-box">
+
+				<h2 class="head">Display All Games</h2>
+				<div class="clearfix"></div>
+			</div>
+
+
+			<div class="ads-grid">
+				<div class="side-bar col-md-3">
+					<p>Is there a product that you wish to purchase but we do not stock? Then please go to the
+						<a href="@routes.HomeController.requestProduct"> request a product</a> page and leave us your details.</p>
+
+
+				<div class="featured-ads">
+
+					<h2 class="sear-head fer">Featured Ads</h2>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.book_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/papillon1.jpg ")"title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(4)  by Henri Charriere </h4>
+								<p> &#8364; @p.help_price(4) </p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.game_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/resboevil.png")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(7) </h4>
+								<p> &#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.mobiles_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/s7.jpg ")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(15)</h4>
+								<p>&#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				</div>
+				<div class="ads-display col-md-9">
+					<div class="wrapper">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+						   <div>
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
+									<label>view :</label>
+									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+								</div>
+								<div class="sort">
+
+									 </div>
+								<div class="clearfix"></div>
+							<ul class="list">
+								<a href="@routes.HomeController.game_1">
+									<li>
+									<img src="@routes.Assets.versioned("images/resboevil.png ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(7)</h5>
+									<span class="adprice">&#8364; @p.help_price(7)</span>
+									<p class="catpath">Games</p>
+									<p>
+										Resident Evil 4 marks a terrifying new chapter in the world renowned Resident Evil series. Players rejoin Leon S. Kennedy, six years after his first mission as a rookie cop from Resident Evil 2. Now a U.S. agent, Leon is on a top-secret mission to investigate the abduction of the President's daughter which leads him to a mysterious European location where unimaginable horrors await.
+					</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.game_2">
+									<li>
+									<img src="@routes.Assets.versioned("images/ff7c.jpg ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(8)</h5>
+									<span class="adprice">&#8364; @p.help_price(8)</span>
+									<p class="catpath">Books</p>
+									<p>
+												The RPG genre was never really considered a mainstream or popular genre -- that is, until the release of Final Fantasy VII on PlayStation. With Final Fantasy VII's historic release on PlayStation in June of 1997, role-playing games were finally given the respect that they deserved and the RPG genre is now one of the most significant and defining on the system. Following the story of Cloud Strife, gamers were taking on a fantastical journey that encompassed three CDs and over 40 hours worth of gameplay. The game continued the trend of using the series' staple turn-based battle system, complete with melee and elaborate magic attacks.
+									</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.game_3">
+									<li>
+									<img src="@routes.Assets.versioned("images/mgs4.jpg ")"  title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(9)</h5>
+									<span class="adprice">&#8364; @p.help_price(9)</span>
+									<p class="catpath">Games </p>
+									<p>
+
+										 Metal Gear Solid : Guns of the Patriots is a story-driven adventure game, with seasoned hero Solid Snake drafted for one final mission. Set across stages including the Middle East and South America, the now aged Snake has been asked to assassinate his old adversary, Liquid Ocelot. To do this, however, he must make his way through a series of battlefields, using his legendary stealth abilities and all-new OctoCamo suit to avoid detection and to reach his target. With series favorites such as Meryl Silverburgh, Raiden, Hal 'Otacon' Emmerich, Eva and Roy Campbell returning, and with all new gameplay features including a remote-controlled Metal Gear Mk. II and enhanced CQC (Close Quarters Combat) system, Metal Gear Solid 4 rounds out the Metal Gear saga with a fittingly cinematic and gripping final outing.
+									</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+
+
+
+								<div class="clearfix"></div>
+								</a>
+							</ul>
+						</div>
+							</div>
+								<div class="feed-back-form">
+			<form>
+				<p >Is there any Product You wish for us to get In stock ? To go to the
+				Request a product page click on the REquest button !!!!!</p>
+
+					<p class="button"><a href="@routes.HomeController.requestProduct">Request Product</a></p>
+
+			</form>
+				</div>
+
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
+
+				</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+$(document).ready(function () {
+var elem=$('#container ul');
+	$('#viewcontrols a').on('click',function(e) {
+		if ($(this).hasClass('gridview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('list').addClass('grid');
+				$('#viewcontrols').removeClass('view-controls-list').addClass('view-controls-grid');
+				$('#viewcontrols .gridview').addClass('active');
+				$('#viewcontrols .listview').removeClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+		else if($(this).hasClass('listview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('grid').addClass('list');
+				$('#viewcontrols').removeClass('view-controls-grid').addClass('view-controls-list');
+				$('#viewcontrols .gridview').removeClass('active');
+				$('#viewcontrols .listview').addClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+	});
+});
+</script>
+
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+			</footer>
+        <!--footer section end-->
+		</section>
+
+
+}

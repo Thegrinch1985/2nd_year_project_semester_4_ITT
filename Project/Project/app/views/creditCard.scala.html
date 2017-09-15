@@ -1,0 +1,151 @@
+@(customer: models.users.Customer,creditCardForm: Form[models.CreditCard])
+@import helper._
+@import play.api.Play.resource
+@import play.api.Play.current
+@import models.shopping._
+@import models.Product
+
+@main("Home", customer) {
+
+
+
+
+<section>
+	<div class="single-page main-grid-border">
+		<div class="container">
+	<h2 class="head">Order</h2>
+
+
+
+<div class="row">
+
+	<div class="col-md-12">
+		@if(flash.containsKey("success")) {
+			  <div class="alert alert-success">
+			      @flash.get("success")
+			  </div>
+		}
+
+		<table class="table table-bordered table-hover table-condensed">
+			<thead>
+			<!-- The header row-->
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Item Price</th>
+				<th>Quantity</th>
+				<th>Total</th>
+
+			</tr>
+			</thead>
+			<tbody>
+                @if(customer.getBasket() != null) {
+                    <!-- Start of For loop - For each p in products add a row -->
+                    @for(i <- customer.getBasket().getBasketItems()) {
+                    <tr>
+                        <td>@i.getProduct.getProduct_name()</td>
+                        <td>@i.getProduct.getCategory()</td>
+                        <td>&euro; @("%.2f".format(i.getPrice))</td>
+												<td>@i.getQuantity()</td>
+												<td>@("€ %.2f".format(i.getQuantity()*i.getProduct.getPrice()))</td>
+                       </tr>
+                    }<!-- End of For loop -->
+              }
+						</tbody>
+						</table>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-right"><strong>Total Due: &euro; @("%.2f".format(customer.getBasket.getBasketTotal))</strong></p>
+            </div>
+        </div>
+           <div class="row">
+
+                               <p class="text-left"><strong>Enter Card Details</strong></p>
+                               	@form(action = routes.ShoppingCtrl.creditCardSubmit(), 'class -> "form-horizontal", 'role->"form"){
+                               <div class="container">
+  <form class="form-horizontal" role="form">
+    <fieldset>
+   	<h2 class="head">Credit Card</h2>
+
+      <div class="form-group">
+           <div class="display-td">
+                            <img class="img-responsive" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+        <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
+        <div class="col-sm-6">
+
+		  @inputText(creditCardForm("name"), '_label -> "Card Holder's Name",'class -> "form-control")
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="card-number">Card Number</label>
+        <div class="col-sm-6">
+    	  @inputText(creditCardForm("cardNumber"), '_label -> "Debit/Credit Card Number",'class -> "form-control")
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-xs-3">
+               @inputText(creditCardForm("month"), '_label -> "Month",'class -> "form-control")
+
+              </select>
+            </div>
+            <div class="col-xs-3">
+                @inputText(creditCardForm("year"), '_label -> "year",'class -> "form-control")
+
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="cvv">Card CVV</label>
+        <div class="col-sm-3">
+          @inputText(creditCardForm("card_cvv"), '_label -> "Card CVV",'class -> "form-control")
+        </div>
+      </div>
+        <input type="submit" value="Add Credit Card" class="btn btn-primary">
+        <div class="col-md-12">
+		@if(flash.containsKey("success")) {
+			  <div class="alert alert-success">
+			      @flash.get("success")
+			  </div>
+		}
+       <div class="col-md-6">
+                <p class="text-right">
+                    <a href="@routes.ShoppingCtrl.payment()" class="btn btn-success btn-sm">
+                    <span class="glyphicon glyphicon-euro"></span>Confirm Payment</a>
+
+                </p>
+            </div>  }
+    </fieldset>
+  </form>
+</div>
+           </div>
+        <div class="row">
+
+
+        </div>
+    </div>
+</div>
+		</div>
+	</div>
+
+<script>
+	// JavaScript function returns true if user clicks yes, otherwise, false
+	function confirmDel() {
+		return confirm('Are you sure?');
+	}
+</script>
+}
+
+
+	<!--footer section start-->
+	<footer class="diff">
+		<p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+	</footer>
+	<!--footer section end-->
+</section>

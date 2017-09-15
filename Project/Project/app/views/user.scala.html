@@ -1,0 +1,76 @@
+@(customer: models.users.Customer)
+
+@main("User Info", customer)  {
+
+<section>
+  <div class="single-page main-grid-border">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="well">
+            <h4>User Details</h4>
+           
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <!-- The header row-->
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+              <th>Edit Details</th>
+        
+              </tr>
+            </thead>
+                <tbody>
+
+            <tr>
+
+            
+                <td>@customer.getName</td>
+                <td class="numeric">@customer.getEmail</td>
+                <td>@customer.getPassword</td>
+                <td>@customer.getDateOfBirth</td>
+                <td>@customer.getAddress</td>
+        
+       <td>
+                  				
+                  <a href="@routes.HomeController.updateDetails(customer.getEmail)" class="btn-xs btn-danger">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  </a>
+
+
+                </td>
+         
+               
+                
+            </tbody>
+ 
+          </table>
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <script> 
+  function confirmDelete() {
+    return confirm('Are you sure?');
+  }
+  </script>
+</section>
+
+
+
+}

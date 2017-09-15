@@ -1,0 +1,263 @@
+
+
+@import models.Category
+@import models.Product
+@(user: models.users.User, p: models.Product)
+
+@main("Home", user) {
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+	 <section>
+
+         <div class="total-ads main-grid-border">
+		<div class="container">
+			<h2 class="head">Mobiles</h2>
+				<div class="container">
+			<div class="col-md-2 focus-grid">
+			<a href="@routes.HomeController.display_all_Mobiles">
+					<div class="focus-border">
+
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-mobile"></i></div>
+							<h4 class="clrchg">Mobiles</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Electronics">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-laptop"></i></div>
+							<h4 class="clrchg"> Electronics</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Instruments">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-music"></i></div>
+							<h4 class="clrchg">Instruments</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.display_all_Books">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-book"></i></div>
+							<h4 class="clrchg">Books</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+					<a href="@routes.HomeController.display_all_Games">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-gamepad"></i></div>
+							<h4 class="clrchg">Games</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-2 focus-grid">
+				<a href="@routes.HomeController.index">
+					<div class="focus-border">
+						<div class="focus-layout">
+							<div class="focus-image"><i class="fa fa-home"></i></div>
+							<h4 class="clrchg">Home</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+	<div class="select-box">
+
+				<h2 class="head">Display All Mobiles</h2>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="ads-grid">
+				<div class="side-bar col-md-3">
+					<p>Is there a product that you wish to purchase but we do not stock? Then please go to the
+						<a href="@routes.HomeController.requestProduct"> request a product</a> page and leave us your details.</p>
+					<div class="featured-ads">
+
+					<h2 class="sear-head fer">Featured Ads</h2>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.book_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/papillon1.jpg ")"title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(4)  by Henri Charriere </h4>
+								<p> &#8364; @p.help_price(4) </p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.game_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/resboevil.png")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(7) </h4>
+								<p> &#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+					<div class="featured-ad">
+						<a href="@routes.HomeController.mobiles_1">
+							<div class="featured-ad-left">
+								<img src="@routes.Assets.versioned("images/s7.jpg ")" title="ad image" alt="" />
+							</div>
+							<div class="featured-ad-right">
+								<h4>@p.help(15)</h4>
+								<p>&#8364; @p.help_price(7)</p>
+							</div>
+							<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				</div>
+				<div class="ads-display col-md-9">
+					<div class="wrapper">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+						   <div>
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
+									<label>view :</label>
+									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+								</div>
+
+								<div class="clearfix"></div>
+							<ul class="list">
+								<a href="@routes.HomeController.mobiles_1">
+									<li>
+									<img src="@routes.Assets.versioned("images/1p1.jpg ")"   title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(13)</h5>
+									<span class="adprice">&#8364; @p.help_price(13)</span>
+									<p class="catpath">Electronics</p>
+									<p>After two previous iterations that were decent but not quite good enough, OnePlus has hit the bigtime with its third iteration. The OnePlus 3 is pretty amazing – a jaw-dropping phone in almost every way that takes the game to the Samsung Galaxy S7, HTC 10 and even the iPhone 6S.
+
+Previous OnePlus devices offered a slightly compromised experience that, while commendable, wasn't good enough to convince us they were genuine flagship beaters. As you'll see from this review, this is no longer the case.
+
+Since my initial review, the OnePlus 3 has risen in price by £20, from £309 up to £329, apparently thanks to Britain voting to leave the EU. Still, even at this price, it does make you think twice before buying an iPhone 7 outright. It's also had a couple of updates, including a new gold model and the ability to set the screen to a slightly more subdued sRGB colour mode. It's not a huge deal, but it gives buyers more choice on how their phone looks, both front and back.
+
+Previous OnePlus devices compromised, but the OnePlus 3 doesn’t. It has a lovely design, fast-charging, NFC for mobile payments and you don’t need a silly invite to actually buy one.
+
+If you want an Android phone off-contract, this might just be the perfect choice.
+
+
+										 </p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.mobiles_2">
+									<li>
+									<img src="@routes.Assets.versioned("images/iphone.jpg ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(14)</h5>
+									<span class="adprice">&#8364; @p.help_price(14)</span>
+									<p class="catpath">INstrument</p>
+									<p>
+										iPhone 7 dramatically improves the most important aspects of the iPhone experience. It introduces advanced new camera systems. The best performance and battery life ever in an iPhone. Immersive stereo speakers. The brightest, most colourful iPhone display. Splash and water resistance.1 And it looks every bit as powerful as it is. This is iPhone 7.
+
+				</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+								<a href="@routes.HomeController.mobiles_3">
+									<li>
+									<img src="@routes.Assets.versioned("images/s73.jpg  ")" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">@p.help(15)</h5>
+									<span class="adprice">&#8364; @p.help_price(15)</span>
+									<p class="catpath">INstrument</p>
+									<p>
+										Samsung has drawn a line between its two flagship handsets for 2016, launching a 5.1-inch Samsung Galaxy S7, partnered with a 5.5-inch Samsung Galaxy S7 edge. The latter, more visually striking model with curved edges, has taken the lion's share of the glory because it's a showboaty smartphone that's piqued interest in the flagship market.
+
+Some may mourn the loss of the more compact 5.1-inch edge model - as was the case with the original S6 edge, which we actually preferred over the massive 5.7-inch SGS6 edge+ - but for many people larger devices are becoming the norm, so this is Samsung finding the balance and giving people what they want.
+
+While the Samsung Galaxy S7 is a fantastic smartphone in its own right, it's the S7 edge that turns heads; this is the smartphone that's calling for attention; this is the handset that's unique. And this is our Samsung Galaxy S7 edge review, with thanks to Carphone Warehouse for the loan of this handset.	</p>
+
+
+
+										</p>
+									</section>
+
+									<div class="clearfix"></div>
+									</li>
+								</a>
+
+
+
+								<div class="clearfix"></div>
+								</a>
+							</ul>
+						</div>
+						</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+	</div>
+
+	<script type="text/javascript">
+$(document).ready(function () {
+var elem=$('#container ul');
+	$('#viewcontrols a').on('click',function(e) {
+		if ($(this).hasClass('gridview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('list').addClass('grid');
+				$('#viewcontrols').removeClass('view-controls-list').addClass('view-controls-grid');
+				$('#viewcontrols .gridview').addClass('active');
+				$('#viewcontrols .listview').removeClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+		else if($(this).hasClass('listview')) {
+			elem.fadeOut(1000, function () {
+				$('#container ul').removeClass('grid').addClass('list');
+				$('#viewcontrols').removeClass('view-controls-grid').addClass('view-controls-list');
+				$('#viewcontrols .gridview').removeClass('active');
+				$('#viewcontrols .listview').addClass('active');
+				elem.fadeIn(1000);
+			});
+		}
+	});
+});
+</script>
+
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center">&copy 2016 Resale. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+			</footer>
+        <!--footer section end-->
+		</section>
+
+
+}
